@@ -1,0 +1,23 @@
+{
+  "configurations": [
+      {
+          "name": "Sandbox",
+          "includePath": [
+              "${default}",
+              "${workspaceFolder}/src",
+              "${workspaceFolder}/../vendor/glfw-3.3.8/include",
+              "${workspaceFolder}/../vendor/glew-2.2.0/include"
+          ],
+          "defines": [
+            "_WIN32"
+          ],
+          "windowsSdkVersion": "10.0.19041.0",
+          "compilerPath": "cl.exe",
+          "cStandard": "c17",
+          "cppStandard": "c++17",
+          "intelliSenseMode": "windows-msvc-x64",
+          "configurationProvider": "ms-vscode.makefile-tools"
+      }
+  ],
+  "version": 4
+}

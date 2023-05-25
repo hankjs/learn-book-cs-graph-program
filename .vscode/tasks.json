@@ -8,7 +8,7 @@
             "type": "shell",
             "command": "msbuild",
             "args": [
-                "TemplateCppPremake5.sln", 
+                "CSGrapgProgram.sln", 
                 "/m",
                 "/property:Configuration=Debug",
                 "/property:Platform=x64",

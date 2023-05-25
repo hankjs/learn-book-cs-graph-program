@@ -1,7 +1,7 @@
 {
   "configurations": [
     {
-      "name": "TemplateCppPremake5",
+      "name": "CSGrapgProgram",
       "type": "cppvsdbg",
       "request": "launch",
       "program": "${workspaceFolder}/bin/Debug-windows-x86_64/Main/Main.exe", // Windows

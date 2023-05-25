@@ -1,4 +1,4 @@
-workspace "TemplateCppPremake5"
+workspace "CSGrapgProgram"
 	architecture "x64"
 	startproject "Main"
 
@@ -9,6 +9,11 @@ workspace "TemplateCppPremake5"
 	}
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+IncludeDir = {}
+IncludeDir["GLFW"] = "vendor/glfw-3.3.8/include"
+
+include "vendor/glfw-3.3.8"
 
 project "Main"
 	location "Main"
@@ -25,13 +30,27 @@ project "Main"
 		"%{prj.name}/src/**.cpp",
 	}
 
-	defines {
-		"_WIN32"
-	}
-
 	includedirs {
 		"%{prj.name}/src",
+		"%{IncludeDir.GLFW}",
+		"vendor/glew-2.2.0/include",
 	}
+
+	--for x64 use these
+	libdirs { 
+		"vendor/glew-2.2.0/lib/Release/x64",
+	}
+
+	links {
+		"GLFW",
+		"glew32",
+		"opengl32.lib",
+	}
+
+	-- defines {
+	-- 	"GLEW_STATIC",
+	-- 	"_WIN32",
+	-- }
 
 	filter "system:windows"
 		systemversion "latest"
@@ -48,4 +67,3 @@ project "Main"
 		runtime "Release"
 		optimize "on"
 
-		
