@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "name": "TemplateCppPremake5",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/Debug-windows-x86_64/Main/Main.exe", // Windows
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/Main/src",
+      "environment": [],
+      "console": "internalConsole",
+      "preLaunchTask": "build:Main"
+    }
+  ],
+  "version": "2.0.0"
+}

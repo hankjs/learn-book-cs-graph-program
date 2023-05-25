@@ -1,0 +1,42 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build:Main",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                "TemplateCppPremake5.sln", 
+                "/m",
+                "/property:Configuration=Debug",
+                "/property:Platform=x64",
+                // Ask msbuild to generate full paths for file names.
+                "/property:GenerateFullPaths=true",
+                "/t:Main",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "group": "build",
+            "presentation": {
+                // Reveal the output only if unrecognized errors occur.
+                // "reveal": "silent"
+            },
+            // Use the standard MS compiler pattern to detect errors, warnings and infos
+            "problemMatcher": "$msCompile",
+            "dependsOn": [
+                "premake"
+            ]
+        },
+        {
+            "label": "premake",
+            "type": "shell",
+            "command": "premake5", // premake5 path or global command
+            "args": [
+                "vs2022",
+            ],
+            "group": "build"
+        }
+    ]
+}
